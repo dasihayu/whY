@@ -5,8 +5,10 @@ import prisma from "./lib/db"
 import { Prisma, TypeOfVote } from "@prisma/client"
 import { JSONContent } from "@tiptap/react"
 import { revalidatePath } from "next/cache"
+import {unstable_noStore as noStore} from 'next/cache'
 
 export async function updateUsername(prevState: any, formData: FormData) {
+    noStore()
     const {getUser} = getKindeServerSession()
     const user = await getUser()
 
