@@ -18,11 +18,12 @@ import {unstable_noStore as noStore} from 'next/cache'
 async function getData(name: string, searchParam: string) {
     noStore()
     const [count, data] = await prisma.$transaction([
-        prisma.post.count({
-            where: {
-                subName: name
-            }
-        }),
+        // prisma.post.count({
+        //     where: {
+        //         subName: name
+        //     }
+        // }),
+        prisma.post.count(),
         prisma.subwhy.findUnique({
             where: {
                 name: name
