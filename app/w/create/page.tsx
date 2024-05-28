@@ -28,7 +28,7 @@ export default function Subwhy() {
         }
     }, [state, toast])
     return (
-        <div className="max-w-[1000px] mx-auto flex flex-col mt-4">
+        <div className="max-w-[1000px] px-4 mx-auto flex flex-col mt-4">
             <form action={formAction}>
                 <h1 className="text-3xl font-bold">Create Community</h1>
                 <Separator className="my-4" />

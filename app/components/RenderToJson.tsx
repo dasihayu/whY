@@ -1,27 +1,35 @@
-import {NodeHandler, NodeHandlers, TipTapRender} from '@troop.com/tiptap-react-render';
+import {
+    NodeHandler,
+    NodeHandlers,
+    TipTapRender,
+} from "@troop.com/tiptap-react-render";
 
 const doc: NodeHandler = (props) => {
-    return <>{props.children}</>
-}
+    return <>{props.children}</>;
+};
 
 const paragraph: NodeHandler = (props) => {
-    return <p>{props.children}</p>
-}
+    return <p>{props.children}</p>;
+};
 
 const text: NodeHandler = (props) => {
-    return <span>{props.node.text}</span>
-}
+    return <span>{props.node.text}</span>;
+};
 
-const handlers : NodeHandlers = {
+const handlers: NodeHandlers = {
     doc: doc,
     text: text,
     paragraph: paragraph,
-}
+};
 
-export function RenderToJson({data}: {data: any}) {
+export function RenderToJson({ data }: { data: any }) {
+    if (!data) {
+        return <div>No content available</div>;
+    }
+    
     return (
-        <div className='px-2 pt-2 prose dark:prose-invert'>
+        <div className="px-2 pt-2 prose dark:prose-invert">
             <TipTapRender handlers={handlers} node={data} />
         </div>
-    )
+    );
 }

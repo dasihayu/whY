@@ -82,7 +82,7 @@ export default function CreatePostRoute({params}: {params: {id: string}}) {
                                             setImageUrl(res[0].url)
                                         }}
                                         onUploadError={(error: Error) => {
-                                            alert('Error')
+                                            alert('Ukuran file terlalu besar')
                                         }}
                                         className="ut-button:bg-primary ut-button:ut-readying:bg-primary/50 yt-label:text-primary ut-button:ut-uploading:bg-primary/50 ut-utton:ut-uploading:afeter:bg-primary"
                                     />
