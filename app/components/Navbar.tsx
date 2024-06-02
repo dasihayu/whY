@@ -11,7 +11,7 @@ export async function Navbar() {
     const {getUser} = getKindeServerSession()
     const user = await getUser()
     return (
-        <nav className="h-[10vh] w-full flex items-center border-b px-5 lg:px-14 justify-between">
+        <nav className="fixed top-0 h-[10vh] w-full flex items-center border-b px-5 lg:px-14 justify-between z-[999] bg-white dark:bg-primary-foreground">
             <Link href='/' className="flex items-center gap-x-2">
                 <Image src={why} alt="why logo" className="h-10 xl:h-16 w-fit" />
             </Link>

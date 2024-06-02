@@ -84,7 +84,6 @@ export default function TipTapEditor({setJson, json} : {setJson: any, json: JSON
     })
     return (
         <div>
-            <Menubar editor={editor} />
             <EditorContent editor={editor} className='rounded-lg border p-2 min-h-[150px] mt-2'/>
         </div>
     )

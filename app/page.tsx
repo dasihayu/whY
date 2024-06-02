@@ -57,7 +57,7 @@ async function getData(searchParam: string) {
 export default async function Home({searchParams} : {searchParams: {page: string}}) {
   
   return (
-    <div className="max-w-[1000px] px-4 mx-auto flex gap-x-10 mt-4">
+    <div className="max-w-[1000px] px-4 mx-auto flex gap-x-10 mt-4 scrollbar-none">
       <div className="w-full  xl:w-[65%] flex flex-col gap-y-5 mb-5">
         <CreatePostCard />  
         <Suspense fallback={<SuspenseCard />} key={searchParams.page}>
